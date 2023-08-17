@@ -1,2 +1,26 @@
-<h1>TransactionRecords#index</h1>
-<p>Find me in app/views/transaction_records/index.html.erb</p>
+<% if @tag %>
+    <div class="container">
+        <h3>Transactions for <%= @tag.name %></h3>
+        <h4>Total: $<%= @tag.transaction_records.sum(:amount) %></h4>
+    </div>
+    <div class="container">
+        <%= link_to 'Add New Transaction', new_tag_transaction_record_path(@tag.id), class: 'btn btn-primary' %>
+    </div>
+    <div class="container">
+        
+        <% if @transaction_records.any? %>
+            <% @tag.transaction_records.reverse_each do |transaction| %>
+                <div class="transaction">
+                    <h4><%= transaction.transaction_name %></h4>
+                    <%= transaction.created_at.strftime('%d %B, %Y') %>
+                    <p>Amount: $<%= transaction.amount %></p>
+                    <%= form_tag(tag_transaction_record_path(@tag, transaction), method: :delete) do %>
+                      <%= button_tag 'Delete', type: 'submit', class: 'btn btn-danger' %>
+                    <% end %>
+                </div>
+            <% end %>
+        <% else %>
+        <h3>No transactions yet</h3>
+        <% end %>
+    </div>
+<% end %>
