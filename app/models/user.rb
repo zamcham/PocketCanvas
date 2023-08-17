@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   private
 
   def create_default_tags
-    puts 'Creating default tags...'
     user = self
     # Create your default tags here
     default_tags = [
