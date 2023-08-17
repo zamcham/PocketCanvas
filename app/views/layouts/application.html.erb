@@ -22,7 +22,10 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link" href="#">Add Transaction</a>
-              <a class="nav-link" href="#">Create Tag</a>
+              <!-- log out button -->
+              <%= form_tag(destroy_user_session_path, method: :delete) do %>
+                <%= button_tag 'Log Out', type: 'submit', class: 'btn btn-primary' %>
+              <% end %>
             </div>
           </div>
         <% end %>

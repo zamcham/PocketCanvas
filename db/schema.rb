@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_17_013109) do
 
   create_table "tags", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "transaction_record_id", null: false
+    t.bigint "transaction_record_id"
     t.string "name", null: false
     t.string "icon", default: "fas fa-tag", null: false
     t.datetime "created_at", null: false
