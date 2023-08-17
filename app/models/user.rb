@@ -15,8 +15,8 @@ class User < ActiveRecord::Base
     user = self
     # Create your default tags here
     default_tags = [
-      { name: 'Groceries', icon: '<i class="fa-solid fa-plate-wheat"></i>' },
-      { name: 'Utilities', icon: '<i class="fa-solid fa-arrows-rotate"></i>' },
+      { name: 'Groceries', icon: '<i class="fa-solid fa-cart-shopping"></i>' },
+      { name: 'Utilities', icon: '<i class="fa-solid fa-faucet"></i>' },
       { name: 'Personal', icon: '<i class="fa-solid fa-user"></i>' }
     ]
 

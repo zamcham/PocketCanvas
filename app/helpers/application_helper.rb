@@ -1,8 +1,10 @@
 module ApplicationHelper
     ICONS = {
-        'Heart' => '<i class="fas fa-heart"></i>',
-        'Star' => '<i class="fas fa-star"></i>',
-        # Add more icons as needed
+        'Health' => '<i class="fa-solid fa-kit-medical"></i>',
+        'Carn' => '<i class="fa-solid fa-car"></i>',
+        'Home' => '<i class="fa-solid fa-house-chimney"></i>',
+        'Plane' => '<i class="fa-solid fa-plane"></i>',
+        'Theater mask' => '<i class="fa-solid fa-masks-theater"></i>'
     }.freeze
     
     def icon_options_for_select(selected = nil)
