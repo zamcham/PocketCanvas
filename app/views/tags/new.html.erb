@@ -1,0 +1,17 @@
+<%= form_for @tag do |f| %>
+  <div class="form-group">
+    <%= f.label :icon %>
+    <%= f.select :icon, options_for_select([
+      ['Select an icon', ''],
+      [fa_icon('fa-heart') + ' Heart', 'fas fa-heart'],
+      [fa_icon('fa-star') + ' Star', 'fas fa-star'],
+    ], @tag.icon), class: 'form-control', escape: false %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit 'Create Transaction', class: 'btn btn-primary' %>
+<% end %>

@@ -12,4 +12,11 @@
     <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
 <% end %>
 </div>
+<div class="container">
+  <!-- Button to create a new category/tag --->
+  <% if user_signed_in? %>
+    <%= link_to 'Add New Category', new_tag_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
 

@@ -36,6 +36,7 @@ class TransactionRecordsController < ApplicationController
   end
 
   def totalAmount
+    @total_amount = TransactionRecord.sum(:amount)
   end
 
   private

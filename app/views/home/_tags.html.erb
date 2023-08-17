@@ -13,8 +13,10 @@
             <div class="tag-stats">
                 <% if tag.transaction_records.any? %>
                     <p>Transactions: <%= tag.transaction_records.count %></p>
+                    <p>Amount: $<%= tag.transaction_records.sum(:amount) %></p>
                 <% else %>
                     <p>Transactions: 0</p>
+                    <p>Amount: $0</p>
                 <% end %>
             </div>
         </div>
