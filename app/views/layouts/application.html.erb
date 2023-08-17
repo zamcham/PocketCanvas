@@ -18,12 +18,14 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-link" href="#">Add Transaction</a>
-            <a class="nav-link" href="#">Create Tag</a>
+        <% if user_signed_in? %>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#">Add Transaction</a>
+              <a class="nav-link" href="#">Create Tag</a>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </nav>
     <p class="notice"><%= notice %></p>
