@@ -1,22 +1,22 @@
-<div class="container">
-<% if user_signed_in? %>
-  <h2>PocketCanvas</h2>
-  <!-- TODO: Create a partial to show a random money inspiration quote -->
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-  <%= render 'tags'%>
-<% else %>
-    <h2>Welcome to PocketCanvas</h2>
-    <!-- TODO: Create a partial to show intro to the app message -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
-    <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
-<% end %>
-</div>
-<div class="container">
-  <!-- Button to create a new category/tag --->
-  <% if user_signed_in? %>
-    <%= link_to 'Add New Category', new_tag_path, class: 'btn btn-primary' %>
-  <% end %>
-</div>
+<div class="container wb">
+    <% if user_signed_in? %>
+      <h2>PocketCanvas</h2>
+      <!-- TODO: Create a partial to show a random money inspiration quote -->
+      <p class="text-justify">Where your financial journey continues with even greater efficiency and insight. Seamlessly manage your budget, track transactions, and monitor spending patterns—all in one place.</p>
+      <%= render 'tags'%>
+    <% else %>
+        <h2>Welcome to PocketCanvas</h2>
+        <!-- TODO: Create a partial to show intro to the app message -->
+        <p class="text-justify">This is your versatile financial companion designed to help you effortlessly manage your budget. With a simple yet powerful interface, PocketCanvas lets you track your expenses, categorize transactions, and gain insights into your spending habits. </p>
+        <div class="loginButtons">
+          <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Add New Category', new_tag_path, class: 'btn btn-primary g-button' %>
+    <% end %>
+  </div>
 
 

@@ -1,26 +1,31 @@
 <% if @tag %>
-    <div class="container">
-        <h3>Transactions for <%= @tag.name %></h3>
+    <div class="container wb">
+        <h2>Transactions - <%= @tag.name %></h3>
         <h4>Total: $<%= @tag.transaction_records.sum(:amount) %></h4>
     </div>
-    <div class="container">
-        <%= link_to 'Add New Transaction', new_tag_transaction_record_path(@tag.id), class: 'btn btn-primary' %>
-    </div>
-    <div class="container">
+    <div class="container wb">
         
         <% if @transaction_records.any? %>
             <% @tag.transaction_records.reverse_each do |transaction| %>
                 <div class="transaction">
-                    <h4><%= transaction.transaction_name %></h4>
+                    <p class="t-name"><%= transaction.transaction_name %></p>
+                    <p class="t-amount">$<%= transaction.amount %></p>
+                </div>
+                <div class="date"> 
                     <%= transaction.created_at.strftime('%d %B, %Y') %>
-                    <p>Amount: $<%= transaction.amount %></p>
                     <%= form_tag(tag_transaction_record_path(@tag, transaction), method: :delete) do %>
-                      <%= button_tag 'Delete', type: 'submit', class: 'btn btn-danger' %>
+                    <%= button_tag type: 'submit', class: 'btn btn-danger' do %>
+                        <i class="fa-solid fa-trash"></i>
                     <% end %>
+                <% end %>
+
                 </div>
             <% end %>
         <% else %>
-        <h3>No transactions yet</h3>
+        <h4>No transactions yet</h4>
         <% end %>
+    </div>
+        <div class="container">
+        <%= link_to 'Add New Transaction', new_tag_transaction_record_path(@tag.id), class: 'btn btn-primary g-button' %>
     </div>
 <% end %>
