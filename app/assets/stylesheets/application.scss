@@ -19,6 +19,16 @@
 body {
   width: 480px;
   margin: 0 auto;
+
+  .tag-item {
+    display: flex;
+    flex-direction: column;
+
+    .tag-icon-name {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
 p.notice,

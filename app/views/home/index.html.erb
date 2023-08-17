@@ -1,9 +1,15 @@
 <div class="container">
-<h1>Welcome To</h1>
-<h2>PocketCanvas</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
-<div class='container'>
+<% if user_signed_in? %>
+  <h2>PocketCanvas</h2>
+  <!-- TODO: Create a partial to show a random money inspiration quote -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <%= render 'tags'%>
+<% else %>
+    <h2>Welcome to PocketCanvas</h2>
+    <!-- TODO: Create a partial to show intro to the app message -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
     <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+<% end %>
 </div>
+

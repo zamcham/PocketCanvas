@@ -1,0 +1,24 @@
+<% if current_user.tags.any? %>
+  <h3>Categories:</h3>
+  <div class="row">
+    <% current_user.tags.each do |tag| %>
+      <div class="col-md-4">
+        <div class="tag-item">
+            <div class="tag-icon-name">
+                <%= tag.icon.html_safe %>
+                <%= tag.name %>
+            </div>
+            <div class="tag-stats">
+                <% if tag.transaction_records.any? %>
+                    <p>Transactions: <%= tag.transaction_records.count %></p>
+                <% else %>
+                    <p>Transactions: 0</p>
+                <% end %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>You don't have any Categories yet.</p>
+<% end %>
