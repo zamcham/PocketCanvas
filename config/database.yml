@@ -24,7 +24,6 @@ default: &default
 development:
   <<: *default
   database: pocketCanvas_development
-  url: <%= ENV['postgres://pocketcanvasdb_user:JHns3IdcpIeAqFziJj2feP2sYHHHj1l6@dpg-cjfogg0cfp5c73bbl220-a.oregon-postgres.render.com/pocketcanvasdb'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -85,3 +84,5 @@ production:
   database: pocketCanvas_production
   username: pocketCanvas
   password: <%= ENV["POCKETCANVAS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['postgres://pocketcanvasdb_user:JHns3IdcpIeAqFziJj2feP2sYHHHj1l6@dpg-cjfogg0cfp5c73bbl220-a/pocketcanvasdb'] %>
+
