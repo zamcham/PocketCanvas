@@ -8,8 +8,7 @@ class TransactionRecordsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @transaction_record = TransactionRecord.new
@@ -33,10 +32,6 @@ class TransactionRecordsController < ApplicationController
       flash[:alert] = 'Failed to delete transaction.'
       render :index
     end
-  end
-
-  def totalAmount
-    @total_amount = TransactionRecord.sum(:amount)
   end
 
   private
