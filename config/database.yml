@@ -79,7 +79,5 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  url: <%= ENV['postgres://pocketcanvasdb_user:JHns3IdcpIeAqFziJj2feP2sYHHHj1l6@dpg-cjfogg0cfp5c73bbl220-a/pocketcanvasdb'] %>
-
+<<: *default
+  url: <%= ENV['DATABASE_URL'] %>
