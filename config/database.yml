@@ -81,8 +81,5 @@ test:
 #
 production:
   <<: *default
-  database: pocketCanvas_production
-  username: pocketCanvas
-  password: <%= ENV["POCKETCANVAS_DATABASE_PASSWORD"] %>
   url: <%= ENV['postgres://pocketcanvasdb_user:JHns3IdcpIeAqFziJj2feP2sYHHHj1l6@dpg-cjfogg0cfp5c73bbl220-a/pocketcanvasdb'] %>
 
