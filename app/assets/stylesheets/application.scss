@@ -17,7 +17,7 @@
 @import "font-awesome";
 
 $blue-color: #3778c2;
-$gray-color: #F5F6F8;
+$gray-color: #f5f6f8;
 $green-color: #5fb523;
 $black-color: #434b54;
 
@@ -44,7 +44,7 @@ body {
   .text-justify {
     text-align: justify;
   }
-  
+
   .wb {
     background-color: white;
     margin: 20px 0;
@@ -66,7 +66,7 @@ body {
 
     .transaction {
       border-bottom: 1px solid rgb(209, 208, 208);
-       
+
       .t-name {
         font-weight: 700;
         color: gray;
@@ -75,7 +75,6 @@ body {
       .t-amount {
         font-weight: bold;
       }
-
     }
 
     .date {
@@ -145,13 +144,6 @@ body {
       display: flex;
       flex-direction: column;
     }
-
-
-
-  }
-
-  .select-icon {
-    font-family: 'Font Awesome 5 Free';
   }
 
   .g-button {
@@ -166,7 +158,6 @@ body {
   .form-group {
     padding: 15px 0;
   }
-
 }
 
 p.notice,
