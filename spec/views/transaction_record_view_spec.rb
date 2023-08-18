@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe 'transaction_records/index', type: :view do
   let(:user) { User.create(name: 'Test User', email: 'test@example.com', password: 'password') }
   let(:tag) { user.tags.create(name: 'Test Tag', icon: 'test-icon', user_id: user.id) }
-  let(:transaction_record) { user.transaction_records.create(transaction_name: 'Bj', amount: 45.5, user: user, tag: tag)}
+  let(:transaction_record) do
+    user.transaction_records.create(transaction_name: 'Bj', amount: 45.5, user: user, tag: tag)
+  end
 
   before do
     assign(:tag, tag)
