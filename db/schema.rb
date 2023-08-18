@@ -10,27 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_222225) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_17_013109) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "tags", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "transaction_record_id", null: false
     t.string "name", null: false
     t.string "icon", default: "fas fa-tag", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["transaction_record_id"], name: "index_tags_on_transaction_record_id"
     t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
   create_table "transaction_records", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.bigint "tag_id", null: false
     t.string "transaction_name", null: false
     t.float "amount", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_transaction_records_on_tag_id"
     t.index ["user_id"], name: "index_transaction_records_on_user_id"
   end
 
@@ -40,9 +40,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_222225) do
     t.float "balance", default: 0.0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "tags", "transaction_records"
   add_foreign_key "tags", "users"
+  add_foreign_key "transaction_records", "tags"
   add_foreign_key "transaction_records", "users"
 end

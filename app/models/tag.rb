@@ -1,4 +1,4 @@
 class Tag < ActiveRecord::Base
   belongs_to :user
-  belongs_to :transaction_record
+  has_many :transaction_records
 end

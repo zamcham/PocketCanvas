@@ -1,0 +1,28 @@
+<% if current_user.tags.any? %>
+  <h4>Your Categories</h4>
+  <div class="row">
+    <% current_user.tags.each do |tag| %>
+      <div class="col-md-4">
+        <div class="tag-item">
+            <%= link_to tag_transaction_records_path(tag_id: tag.id), class: 'tag-button' do %>
+              <div class="tag-icon-name">
+                <%= tag.icon.html_safe %>
+                <%= tag.name %>
+              </div>
+            <% end %>
+            <div class="tag-stats">
+                <% if tag.transaction_records.any? %>
+                    <p>Transactions: <%= tag.transaction_records.count %></p>
+                    <p>Amount: $<%= tag.transaction_records.sum(:amount) %></p>
+                <% else %>
+                    <p>Transactions: 0</p>
+                    <p>Amount: $0</p>
+                <% end %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>You don't have any Categories yet.</p>
+<% end %>

@@ -1,4 +1,4 @@
 class HomeController < ApplicationController
-  def Index
-  end
+  before_action :authenticate_user!, except: %i[index]
+  def index; end
 end
