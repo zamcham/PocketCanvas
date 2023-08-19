@@ -160,6 +160,8 @@ If you like this project give us a star ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+Thank you to [Gregoire Vella](https://www.behance.net/gregoirevella), the author of the [original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding)
+
 Special thanks to our team and the Ruby community for their support and contributions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
