@@ -28,6 +28,8 @@
 
 "PocketCanvas" is a user-friendly web application designed to empower users in managing their personal finances with ease. It offers a comprehensive platform for budget tracking, expense categorization, and gaining valuable insights into spending habits. Whether you're looking to keep a closer eye on your financial goals or simply want to enhance your money management skills, PocketCanvas provides the tools you need. 
 
+Want an overview? Watch [this video](https://www.loom.com/share/b6ecc70ed0d14d128c3023533bc04026) about the app
+
 
 ## ERD diagram
 #### The structure of PocketCanvas application is based on the ERD diagram below:
