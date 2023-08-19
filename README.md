@@ -10,7 +10,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
   - [Key Features](#key-features)
-  <!-- [🚀 Presentation](#presentation) -->
+  - [🚀 Presentation](#presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -72,13 +72,14 @@ Want an overview? Watch [this video](https://www.loom.com/share/b6ecc70ed0d14d12
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
- <!-- LIVE DEMO
 
-## 🚀 Live Demo <a name="presentation"></a>
+## 🚀 Live Demo <a name="presentation"></a> ##
 
 [- Live Demo - PocketCanvas](https://pocketcanvas.onrender.com/)
+Want an overview? Watch [this video](https://www.loom.com/share/b6ecc70ed0d14d128c3023533bc04026) about the app
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
