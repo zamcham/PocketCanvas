@@ -1,0 +1,25 @@
+<div class="container wb-h">
+    <% if user_signed_in? %>
+      <h2 class="text-center">PocketCanvas</h2>
+      <!-- TODO: Create a partial to show a random money inspiration quote -->
+      <%= render 'tags'%>
+    <% else %>
+        <div class="hometext">
+          <h2>PocketCanvas</h2>
+        </div>
+        <div class="loginButtons">
+          <div class="b1">
+            <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-primary' %>
+          </div>
+          <div class="b2">
+            <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-primary nbg' %>
+          </div>
+        </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= link_to 'Add New Category', new_tag_path, class: 'btn btn-primary g-button' %>
+    <% end %>
+</div>
+
+

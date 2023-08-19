@@ -1,0 +1,26 @@
+<% if current_user.tags.any? %>
+    <% current_user.tags.each do |tag| %>
+    <div class="container hpcard">
+      <div class="hp-t-container">
+        <div class="tag-icon-name">
+          <%= link_to tag_transaction_records_path(tag_id: tag.id), class: 't-icon-hp' do %>
+            <%= tag.icon.html_safe %>
+            <%= tag.name %>
+          <% end %>
+        </div>
+        <div class="hp-t-info">
+          <% if tag.transaction_records.any? %>
+            <p>Transactions: <%= tag.transaction_records.count %></p>
+            <p>Amount: $<%= tag.transaction_records.sum(:amount) %></p>
+          <% else %>
+            <p>Transactions: 0</p>
+            <p>Amount: $0</p>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    <% end %>
+
+<% else %>
+  <p>You don't have any Categories yet.</p>
+<% end %>

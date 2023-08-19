@@ -1,0 +1,15 @@
+<div class='container wb'>
+<%= form_for @tag do |f| %>
+  <div class="form-group">
+    <%= f.label :icon %>
+    <%= f.select :icon, icon_options_for_select(@tag.icon), class: 'form-control', required: true %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', required: true %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit 'Create Category', class: 'btn btn-primary g-button' %>
+<% end %>
+</div>

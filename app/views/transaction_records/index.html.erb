@@ -1,0 +1,38 @@
+<% if @tag %>
+  <div class="container wb t-total-title">
+    <p><%= @tag.name %></p>
+    <p>Total: $<%= @tag.transaction_records.sum(:amount) %></p>
+  </div>
+    <% if @transaction_records.any? %>
+      <% @tag.transaction_records.reverse_each do |transaction| %>
+        <div class="container wb">
+            <div class="t-container">
+                <div class="t-photo">
+                  <%= image_tag 'transactionDefault.jpg', class: "t-photo-raw", alt: "transaction icon" %>
+                </div>
+                <div class="t-info">
+                <div class="transaction">
+                    <p class="t-name"><%= transaction.transaction_name %></p>
+                    <p class="t-amount">$<%= transaction.amount %></p>
+                </div>
+                <div class="date"> 
+                    <%= transaction.created_at.strftime('%d %B, %Y') %>
+                    <%= form_tag(tag_transaction_record_path(@tag, transaction), method: :delete) do %>
+                    <%= button_tag type: 'submit', class: 'btn btn-danger' do %>
+                        <i class="fa-solid fa-trash"></i>
+                    <% end %>
+                    <% end %> <!-- Close form_tag here -->
+                </div>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    <% else %>
+    <div class="container wb">
+      <h4>No transactions yet</h4>
+    </div>
+    <% end %>
+  <div class="container">
+    <%= link_to 'Add New Transaction', new_tag_transaction_record_path(@tag.id), class: 'btn btn-primary g-button' %>
+  </div>
+<% end %>

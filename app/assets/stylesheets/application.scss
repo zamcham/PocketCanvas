@@ -1,0 +1,341 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap';
+@import "font-awesome";
+
+$blue-color: #3778c2;
+$gray-color: #f5f6f8;
+$green-color: #5fb523;
+$black-color: #434b54;
+
+body {
+  width: 480px;
+  margin: 0 auto;
+  background-color: $gray-color;
+
+  .container {
+    background-color: $gray-color;
+    color: $black-color;
+
+    .loginButtons {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+
+      * {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .text-justify {
+    text-align: justify;
+  }
+
+  .wb-h {
+    background-color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .hometext {
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loginButtons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .b1,
+      .b2 {
+        width: 100%;
+
+        .btn {
+          width: 100%;
+          height: 50px;
+          margin: 5px 0;
+          background-color: $blue-color;
+        }
+
+        .nbg {
+          background-color: white;
+          color: $black-color;
+          border-color: white;
+        }
+      }
+    }
+  }
+
+  .l-s-p {
+    position: relative;
+    width: 480px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
+  .wb {
+    background-color: white;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(209, 208, 208);
+
+    h2,
+    h4 {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .transaction,
+    .date {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .transaction {
+      border-bottom: 1px solid rgb(209, 208, 208);
+
+      .t-name {
+        font-weight: 700;
+        color: gray;
+      }
+
+      .t-amount {
+        font-weight: bold;
+      }
+    }
+
+    .date {
+      color: rgb(176, 176, 176);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .t-container {
+      display: flex;
+      align-items: center;
+
+      .t-photo {
+        flex: 1;
+
+        img {
+          height: 80px;
+          width: 80px;
+          margin: 10px;
+        }
+      }
+
+      .t-info {
+        flex: 2;
+      }
+    }
+  }
+
+  .navmenu {
+    background-color: $blue-color;
+    color: white;
+
+    .logoMenu {
+      height: 50px;
+      width: auto;
+    }
+
+    .navitem {
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .al-c {
+      justify-content: center;
+    }
+
+    .al-l {
+      justify-content: flex-start;
+    }
+
+    .al-r {
+      justify-content: flex-end;
+    }
+  }
+
+  .col-md-4 {
+    margin: 10px 0;
+  }
+
+  .hpcard {
+    padding: 10px;
+    box-shadow: 0 3px 10px rgb(209, 208, 208);
+
+    a {
+      text-decoration: none;
+      color: $blue-color;
+    }
+
+    a:hover {
+      color: white;
+    }
+  }
+
+  .tag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    min-height: 150px;
+    box-shadow: 0 3px 10px rgb(209, 208, 208);
+
+    a:hover {
+      color: $green-color;
+    }
+
+    p {
+      padding: 0;
+      margin: 0;
+    }
+
+    .tag-icon-name {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .g-button {
+    background-color: $green-color;
+    width: 100%;
+    height: 50px;
+    border-radius: 0;
+    border: none;
+    margin: 20px 0;
+  }
+
+  .form-group {
+    padding: 15px 0;
+  }
+
+  .signup {
+    padding: 0;
+  }
+
+  #e {
+    border: none;
+  }
+
+  .t-total-title {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-weight: 500;
+    height: 60px;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .hp-t-container {
+    display: flex;
+
+    .t-icon-hp {
+      flex: 1;
+      background-color: rgb(228, 228, 228);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .t-icon-hp:hover {
+      background-color: $blue-color;
+    }
+
+    .hp-t-info {
+      flex: 2;
+      padding: 5px 10px;
+    }
+
+    .tag-icon-name {
+      display: flex;
+      width: 130px;
+      justify-content: center;
+    }
+  }
+}
+
+.loginnavbar {
+  background-color: $blue-color;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+}
+
+p.notice,
+p.alert {
+  margin: 0;
+  padding: 0;
+}
+
+.nf {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.form-control {
+  height: 50px;
+  border: none;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  border-radius: 0;
+}
+
+.pw {
+  border-top: none;
+}
+
+.nb-button {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background-color: $blue-color;
+  border: none;
+  color: white;
+}
+
+.page-button {
+  color: $blue-color;
+}
+
+.devise-links {
+  display: block;
+  width: 100%;
+  color: gray;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+}
