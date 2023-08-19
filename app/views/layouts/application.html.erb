@@ -38,6 +38,36 @@
       </div>
     </nav>
     <% end %>
+    <!-- Only show the following on devise/session/new (login page) -->
+    <% if request.path == new_user_session_path %>
+     <div class="loginnavbar">
+        <div class="backButton">
+            <a class="navbar-brand" href="<%= root_path %>">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+        <div class="page-name">
+          <p>LOG IN</p>
+        </div>
+          <div class="page-button">
+          <p>.</p>
+        </div>
+      </div>
+    <% elsif request.path == new_user_registration_path  %>
+      <div class="loginnavbar">
+        <div class="backButton">
+            <a class="navbar-brand" href="<%= root_path %>">
+              <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </div>
+        <div class="page-name">
+          <p>REGISTRATION</p>
+        </div>
+          <div class="page-button">
+          <p>.</p>
+        </div>
+      </div>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

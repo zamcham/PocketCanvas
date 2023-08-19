@@ -86,6 +86,8 @@ body {
   }
 
   .l-s-p {
+    position: relative;
+    width: 480px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -129,6 +131,25 @@ body {
       font-size: 13px;
       font-weight: 400;
     }
+
+    .t-container {
+      display: flex;
+      align-items: center;
+
+      .t-photo {
+        flex: 1;
+
+        img {
+          height: 80px;
+          width: 80px;
+          margin: 10px;
+        }
+      }
+
+      .t-info {
+        flex: 2;
+      }
+    }
   }
 
   .navmenu {
@@ -165,6 +186,20 @@ body {
     margin: 10px 0;
   }
 
+  .hpcard {
+    padding: 10px;
+    box-shadow: 0 3px 10px rgb(209, 208, 208);
+
+    a {
+      text-decoration: none;
+      color: $blue-color;
+    }
+
+    a:hover {
+      color: white;
+    }
+  }
+
   .tag-item {
     display: flex;
     flex-direction: column;
@@ -173,10 +208,6 @@ body {
     padding: 8px;
     min-height: 150px;
     box-shadow: 0 3px 10px rgb(209, 208, 208);
-
-    a {
-      text-decoration: none;
-    }
 
     a:hover {
       color: $green-color;
@@ -204,6 +235,52 @@ body {
 
   .form-group {
     padding: 15px 0;
+  }
+
+  .signup {
+    padding: 0;
+  }
+
+  #e {
+    border: none;
+  }
+
+  .t-total-title {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-weight: 500;
+    height: 60px;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .hp-t-container {
+    display: flex;
+
+    .t-icon-hp {
+      flex: 1;
+      background-color: rgb(228, 228, 228);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .t-icon-hp:hover {
+      background-color: $blue-color;
+    }
+
+    .hp-t-info {
+      flex: 2;
+      padding: 5px 10px;
+    }
+
+    .tag-icon-name {
+      display: flex;
+      width: 130px;
+      justify-content: center;
+    }
   }
 }
 
@@ -235,10 +312,30 @@ p.alert {
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
   border-radius: 0;
-
-
 }
 
 .pw {
   border-top: none;
+}
+
+.nb-button {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background-color: $blue-color;
+  border: none;
+  color: white;
+}
+
+.page-button {
+  color: $blue-color;
+}
+
+.devise-links {
+  display: block;
+  width: 100%;
+  color: gray;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
 }

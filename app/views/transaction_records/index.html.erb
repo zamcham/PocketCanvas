@@ -1,12 +1,16 @@
 <% if @tag %>
-    <div class="container wb">
-        <h2>Transactions - <%= @tag.name %></h3>
-        <h4>Total: $<%= @tag.transaction_records.sum(:amount) %></h4>
-    </div>
-    <div class="container wb">
-        
-        <% if @transaction_records.any? %>
-            <% @tag.transaction_records.reverse_each do |transaction| %>
+  <div class="container wb t-total-title">
+    <p><%= @tag.name %></p>
+    <p>Total: $<%= @tag.transaction_records.sum(:amount) %></p>
+  </div>
+    <% if @transaction_records.any? %>
+      <% @tag.transaction_records.reverse_each do |transaction| %>
+        <div class="container wb">
+            <div class="t-container">
+                <div class="t-photo">
+                  <%= image_tag 'transactionDefault.jpg', class: "t-photo-raw", alt: "transaction icon" %>
+                </div>
+                <div class="t-info">
                 <div class="transaction">
                     <p class="t-name"><%= transaction.transaction_name %></p>
                     <p class="t-amount">$<%= transaction.amount %></p>
@@ -17,15 +21,18 @@
                     <%= button_tag type: 'submit', class: 'btn btn-danger' do %>
                         <i class="fa-solid fa-trash"></i>
                     <% end %>
-                <% end %>
-
+                    <% end %> <!-- Close form_tag here -->
                 </div>
-            <% end %>
-        <% else %>
-        <h4>No transactions yet</h4>
-        <% end %>
+                </div>
+            </div>
+        </div>
+      <% end %>
+    <% else %>
+    <div class="container wb">
+      <h4>No transactions yet</h4>
     </div>
-        <div class="container">
-        <%= link_to 'Add New Transaction', new_tag_transaction_record_path(@tag.id), class: 'btn btn-primary g-button' %>
-    </div>
+    <% end %>
+  <div class="container">
+    <%= link_to 'Add New Transaction', new_tag_transaction_record_path(@tag.id), class: 'btn btn-primary g-button' %>
+  </div>
 <% end %>

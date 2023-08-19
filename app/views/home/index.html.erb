@@ -1,8 +1,7 @@
 <div class="container wb-h">
     <% if user_signed_in? %>
-      <h2>PocketCanvas</h2>
+      <h2 class="text-center">PocketCanvas</h2>
       <!-- TODO: Create a partial to show a random money inspiration quote -->
-      <p class="text-justify">Where your financial journey continues with even greater efficiency and insight. Seamlessly manage your budget, track transactions, and monitor spending patterns—all in one place.</p>
       <%= render 'tags'%>
     <% else %>
         <div class="hometext">
