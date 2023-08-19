@@ -1,24 +1,26 @@
-<h2>Log in</h2>
-
+<div class="loginnavbar">
+  <div class="backButton">
+      <a class="navbar-brand" href="<%= root_path %>">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+  </div>
+  <div class="page-name">
+    <p>LOG IN</p>
+  </div>
+    <div class="page-button">
+    <p>LOG IN</p>
+  </div>
+</div>
+<div class="container wb l-s-p">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+  <div class="nf">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control',  placeholder: 'Email'%>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+  <div class="nf">
+    <%= f.password_field :password, autocomplete: "current-password", class: 'form-control pw', placeholder: 'Password' %>
   </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="form-group">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
     <%= f.submit "Log in", class: 'btn btn-primary g-button', id: 'submit-button' %>
 <% end %>
-
+</div>
 <%= render "devise/shared/links" %>

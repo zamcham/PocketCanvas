@@ -1,22 +1,26 @@
-<div class="container wb">
+<div class="container wb-h">
     <% if user_signed_in? %>
       <h2>PocketCanvas</h2>
       <!-- TODO: Create a partial to show a random money inspiration quote -->
       <p class="text-justify">Where your financial journey continues with even greater efficiency and insight. Seamlessly manage your budget, track transactions, and monitor spending patterns—all in one place.</p>
       <%= render 'tags'%>
     <% else %>
-        <h2>Welcome to PocketCanvas</h2>
-        <!-- TODO: Create a partial to show intro to the app message -->
-        <p class="text-justify">This is your versatile financial companion designed to help you effortlessly manage your budget. With a simple yet powerful interface, PocketCanvas lets you track your expenses, categorize transactions, and gain insights into your spending habits. </p>
+        <div class="hometext">
+          <h2>PocketCanvas</h2>
+        </div>
         <div class="loginButtons">
-          <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
-          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary' %>
+          <div class="b1">
+            <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-primary' %>
+          </div>
+          <div class="b2">
+            <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-primary nbg' %>
+          </div>
         </div>
     <% end %>
 
     <% if user_signed_in? %>
       <%= link_to 'Add New Category', new_tag_path, class: 'btn btn-primary g-button' %>
     <% end %>
-  </div>
+</div>
 
 

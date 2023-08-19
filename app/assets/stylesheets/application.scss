@@ -45,6 +45,53 @@ body {
     text-align: justify;
   }
 
+  .wb-h {
+    background-color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .hometext {
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .loginButtons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .b1,
+      .b2 {
+        width: 100%;
+
+        .btn {
+          width: 100%;
+          height: 50px;
+          margin: 5px 0;
+          background-color: $blue-color;
+        }
+
+        .nbg {
+          background-color: white;
+          color: $black-color;
+          border-color: white;
+        }
+      }
+    }
+  }
+
+  .l-s-p {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+  }
+
   .wb {
     background-color: white;
     margin: 20px 0;
@@ -160,8 +207,38 @@ body {
   }
 }
 
+.loginnavbar {
+  background-color: $blue-color;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+}
+
 p.notice,
 p.alert {
   margin: 0;
   padding: 0;
+}
+
+.nf {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.form-control {
+  height: 50px;
+  border: none;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  border-radius: 0;
+
+
+}
+
+.pw {
+  border-top: none;
 }

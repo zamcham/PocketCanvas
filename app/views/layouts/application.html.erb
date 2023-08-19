@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <%if user_signed_in? %>
     <nav class="navmenu d-flex">
       <div class="navitem al-l">
         <% if request.path != root_path %>
@@ -36,6 +37,7 @@
         <% end %>
       </div>
     </nav>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
